@@ -69,6 +69,30 @@ public class ProcessQuery {
         
         return q;      
     }
+    
+    @GET
+    @Path("senddailyquotes/{target}")
+    //@Produces({MediaType.APPLICATION_JSON})
+    public Response sendDailyQuotes(@PathParam("target") String target) {
+        Response resp;
+        
+        if (target == null || target.isEmpty()){
+            resp = Response.status(202).entity(Constants.OPERATION_FAIL).build();
+            return resp;
+        }
+       
+        SenderTask sender = new SenderTask();
+        
+        //sender.run();
+        if (sender.send(target) != Constants.SUCCESS){
+            resp = Response.status(202).entity("invalid address format " + target).build();
+            return resp;
+        }
+        
+        resp = Response.status(201).entity("daily quotes send to " + target).build();
+ 
+        return resp;
+    }
 
     @GET
     @Path("getallquotes")

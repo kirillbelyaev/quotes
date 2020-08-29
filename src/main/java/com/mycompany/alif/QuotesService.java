@@ -24,7 +24,7 @@ public class QuotesService {
     public int createQuote(String id, Quote q) {
          
         if (q == null || id == null || id.isEmpty())
-            return RETURN_CODES.INCORRECT_PARAMETER.getValue();
+            return RETURN_CODES.INVALID_PARAMETER.getValue();
          
         Quote quote = new Quote();
         quote = q;
@@ -41,7 +41,7 @@ public class QuotesService {
     public int deleteQuote(String id) {
          
         if (id == null || id.isEmpty())
-            return RETURN_CODES.INCORRECT_PARAMETER.getValue();
+            return RETURN_CODES.INVALID_PARAMETER.getValue();
          
         Quote q  = QuotesDAO.getInstance().getModel().remove(id);
         
@@ -259,10 +259,10 @@ public class QuotesService {
     public int editQuoteAuthor(String id, String author) {
          
         if (id == null || id.isEmpty())
-            return RETURN_CODES.INCORRECT_PARAMETER.getValue();
+            return RETURN_CODES.INVALID_PARAMETER.getValue();
         
         if (author == null || author.isEmpty())
-            return RETURN_CODES.INCORRECT_PARAMETER.getValue();     
+            return RETURN_CODES.INVALID_PARAMETER.getValue();     
         
         if (QuotesDAO.getInstance().getModel().get(id) == null)
             return RETURN_CODES.NOT_FOUND.getValue();
@@ -275,10 +275,10 @@ public class QuotesService {
     public int editQuoteCategory(String id, String category) {
          
         if (id == null || id.isEmpty())
-            return RETURN_CODES.INCORRECT_PARAMETER.getValue();
+            return RETURN_CODES.INVALID_PARAMETER.getValue();
         
         if (category == null || category.isEmpty())
-            return RETURN_CODES.INCORRECT_PARAMETER.getValue();     
+            return RETURN_CODES.INVALID_PARAMETER.getValue();     
         
         if (QuotesDAO.getInstance().getModel().get(id) == null)
             return RETURN_CODES.NOT_FOUND.getValue();
@@ -291,10 +291,10 @@ public class QuotesService {
     public int editQuote(String id, String quote) {
          
         if (id == null || id.isEmpty())
-            return RETURN_CODES.INCORRECT_PARAMETER.getValue();
+            return RETURN_CODES.INVALID_PARAMETER.getValue();
         
         if (quote == null || quote.isEmpty())
-            return RETURN_CODES.INCORRECT_PARAMETER.getValue();     
+            return RETURN_CODES.INVALID_PARAMETER.getValue();     
         
         if (QuotesDAO.getInstance().getModel().get(id) == null)
             return RETURN_CODES.NOT_FOUND.getValue();
