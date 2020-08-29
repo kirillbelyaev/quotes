@@ -19,7 +19,8 @@ public interface Constants {
         SUCCESS(0),
         ERROR(1),
         NOT_FOUND(2),
-        INVALID_PARAMETER(3);
+        INVALID_PARAMETER(3),
+        NO_MATCH(4);
 
         private final int value;
 

@@ -5,6 +5,9 @@
  */
 package com.mycompany.alif;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  *
  * @author kirill
@@ -32,6 +35,14 @@ public class SenderTask implements Runnable {
         if (email == null || email.isEmpty()) 
             return Constants.RETURN_CODES.INVALID_PARAMETER.getValue();
         
+        final String regex = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
+        //initialize the Pattern object
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(email);
+        
+        if (matcher.matches() != true )
+            return Constants.RETURN_CODES.NO_MATCH.getValue();
+            
         return Constants.SUCCESS;
     } 
     
