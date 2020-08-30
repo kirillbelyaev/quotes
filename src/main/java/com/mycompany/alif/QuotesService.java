@@ -18,7 +18,7 @@ import java.util.concurrent.ThreadLocalRandom;
  *
  * @author kirill
  */
-public class QuotesService {
+public class QuotesService implements QuotesServiceInterface {
     
     /* indirect interface to object operations */
     public int createQuote(String id, Quote q) {
@@ -63,7 +63,7 @@ public class QuotesService {
         
         //Collection values = QuotesDAO.getInstance().getModel().values();
         //QuotesDAO.getInstance().getModel().
-       //List<Quote> result = new ArrayList(QuotesDAO.getInstance().getModel().values());
+        //List<Quote> result = new ArrayList(QuotesDAO.getInstance().getModel().values());
                 
                 
 //        System.out.println("\n Values are: ");

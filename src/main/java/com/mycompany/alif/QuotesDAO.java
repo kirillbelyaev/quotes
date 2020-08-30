@@ -13,6 +13,8 @@ import java.util.Map;
  *
  * @author kirill
  */
+
+/* implement Singleton Pattern */
 public class QuotesDAO {
     
     private QuotesDAO() {
