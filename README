@@ -1,6 +1,7 @@
-Quotes Web service API description.
+Sample Quotes Web service API description.
 
 Web service is written in Java EE with Jersey JRS (Java Restful Services) framework.
+Quotes are stored and managed in memory without persistence to any database. 
 The Maven project is packaged into war file and could be deployed on Java based application servers such as Oracle's Glassfish, WebLogic and Apache's Tomcat.
 
 
@@ -13,32 +14,32 @@ HTTP GET:
 
 1.
 
-http://localhost:8080/alif/rest/getallquotes
+http://localhost:8080/alif/rest/getAllQuotes
 
 returns JSON
 
 2.
 
-http://localhost:8080/alif/rest/getsamplequote
+http://localhost:8080/alif/rest/getSampleQuote
 
 returns JSON
 
 3.
 
-http://localhost:8080/alif/rest/getrandomquote
+http://localhost:8080/alif/rest/getRandomQuote
 
 returns JSON
 
 4.
 
-http://localhost:8080/alif/rest/getallquotesbycategory/daily
+http://localhost:8080/alif/rest/getAllQuotesByCategory/daily
 
 returns JSON
 specify category keyword after slash /. For example:  http://localhost:8080/alif/rest/getallquotesbycategory/weekly
 
 5.
 
-http://localhost:8080/alif/rest/senddailyquotes/bob@company.com
+http://localhost:8080/alif/rest/sendDailyQuotes/bob@company.com
 
 returns HTTP response with code and annotated message
 
@@ -49,7 +50,7 @@ HTTP POST:
 
 6.
 
-http://localhost:8080/alif/rest/createquote
+http://localhost:8080/alif/rest/createQuote
 
 consumes JSON Quote object:
 
@@ -108,3 +109,14 @@ consumes JSON Quote object:
 }
 
 returns HTTP response with code and annotated message
+
+HTTP DELETE:
+
+10.
+
+http://localhost:8080/alif/rest/deleteQuote/0
+
+returns HTTP response with code and annotated message
+
+specify ID after slash /.
+

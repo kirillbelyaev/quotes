@@ -51,7 +51,7 @@ public class ProcessQuery {
     Request request;
     
     @GET
-    @Path("getsamplequote")
+    @Path("getSampleQuote")
     @Produces({MediaType.APPLICATION_JSON})
     public Quote sendSampleQuote() {
         
@@ -71,7 +71,7 @@ public class ProcessQuery {
     }
     
     @GET
-    @Path("senddailyquotes/{target}")
+    @Path("sendDailyQuotes/{target}")
     //@Produces({MediaType.APPLICATION_JSON})
     public Response sendDailyQuotes(@PathParam("target") String target) {
         Response resp;
@@ -97,14 +97,14 @@ public class ProcessQuery {
     }
 
     @GET
-    @Path("getallquotes")
+    @Path("getAllQuotes")
     @Produces({MediaType.APPLICATION_JSON})
     public List<Quote> getAllQuotes() {
         return QS.getAllQuotes();     
     }
     
     @GET
-    @Path("getrandomquote")
+    @Path("getRandomQuote")
     @Produces({MediaType.APPLICATION_JSON})
     public Quote getRandomQuote() {
         return QS.getRandomQuote();     
@@ -112,7 +112,7 @@ public class ProcessQuery {
     
     @GET
     //@Path("{getallquotesbycategory}")
-    @Path("getallquotesbycategory/{category}")
+    @Path("getAllQuotesByCategory/{category}")
     @Produces({MediaType.APPLICATION_JSON})
     //public Quote getAllQuotesByCategory(@PathParam("getallquotesbycategory") String category) {
     public List <Quote> getAllQuotesByCategory(@PathParam("category") String category) { 
@@ -123,7 +123,7 @@ public class ProcessQuery {
     }
     
     @DELETE
-    @Path("deletequote/{id}")
+    @Path("deleteQuote/{id}")
     public Response deleteQuote(@PathParam("id") String id) {
         if (QS.deleteQuote(id) == Constants.RETURN_CODES.SUCCESS.getValue() ) {
             return Response.status(202).entity("Quote with id " + id + " deleted successfully.").build();
@@ -134,7 +134,7 @@ public class ProcessQuery {
     }
     
     @POST
-    @Path("createquote")
+    @Path("createQuote")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML}) 
     //@Produces(MediaType.APPLICATION_XML) 
