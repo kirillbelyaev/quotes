@@ -5,6 +5,7 @@
  */
 package com.mycompany.alif;
 
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -22,11 +23,13 @@ public class SenderTask implements Runnable {
         throw new UnsupportedOperationException("SenderTask exception."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    int send(String target){
+    int send(String target, List <Quote> ql){
         System.out.println("SenderTask activated. ");
         
         if (this.validateEmail(target) != Constants.SUCCESS)
             return Constants.RETURN_CODES.INVALID_PARAMETER.getValue();
+        
+        System.out.println("SenderTask: sending quotes ... ");
                     
         return Constants.SUCCESS;
     }

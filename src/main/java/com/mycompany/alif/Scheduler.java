@@ -46,6 +46,7 @@ public void contextDestroyed() {
     scheduler.shutdownNow();
 }
 
+/* inline runnable task */
 Runnable CleanerTask = () -> {
             
         System.out.println("Running... CleanerTask ");

@@ -39,5 +39,6 @@ public interface Constants {
     String OPERATION_FAIL = "Operation failed";
     String OPERATION_SUCCESS = "Operation successful";
     String INVALID_OBJECT = "Invalid object - NULL";
+    String CATEGORY_DAILY = "Daily";
     
 }

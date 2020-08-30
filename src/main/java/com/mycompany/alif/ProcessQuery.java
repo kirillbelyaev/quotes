@@ -58,7 +58,7 @@ public class ProcessQuery {
         String author = "Jack London";
         String quote = "Famous quote from the past";
         String quote1 = "Famous quote from the future";
-        String category = "daily";
+        String category = "Daily";
         String ID = "1";
         
         Quote q = new Quote();
@@ -83,8 +83,10 @@ public class ProcessQuery {
        
         SenderTask sender = new SenderTask();
         
+        List <Quote> ql = QS.getAllQuotesByCategory(Constants.CATEGORY_DAILY);
+        
         //sender.run();
-        if (sender.send(target) != Constants.SUCCESS){
+        if (sender.send(target, ql) != Constants.SUCCESS){
             resp = Response.status(202).entity("invalid address format " + target).build();
             return resp;
         }

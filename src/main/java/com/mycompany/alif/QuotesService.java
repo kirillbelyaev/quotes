@@ -111,6 +111,7 @@ public class QuotesService {
         int size = quotes.size();
         //System.out.println("quotes size is: " + size);
         
+        /* if no quotes found send a single empty quote object with blank fields instead of NULL for descriptiveness */
         if (size == ZERO) {
              Quote q = new Quote();
              quotes.add(q);
@@ -158,9 +159,11 @@ public class QuotesService {
                    LocalDate elementDate = LocalDate.parse(QuotesDAO.getInstance().getModel().get(it.next()).getDate() );
                    //System.out.println("date obtained from map is: " + elementDate);
                    
+                   /* compare the obtained dates */
                    if (Currentdate.isAfter(elementDate) == true){
                        QuotesDAO.getInstance().getModel().remove(it.next());
                    }
+                   
                     //Quote q = QuotesDAO.getInstance().getModel().get(it.next());
                     //quotes.add(q);
                     //System.out.println("Quote obtained from map is: " + q.getQuote() );
@@ -169,6 +172,7 @@ public class QuotesService {
         
         return Constants.SUCCESS;
     }
+    
 //    public List<Quote> getAllQuotes2() {
 //        List<Quote> quotes = new ArrayList<Quote>();
 //        //quotes.addAll(QuotesDAO.getInstance().getModel().values() );
