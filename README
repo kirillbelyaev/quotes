@@ -1,0 +1,110 @@
+Quotes Web service API description.
+
+Web service is written in Java EE with Jersey JRS (Java Restful Services) framework.
+The Maven project is packaged into war file and could be deployed on Java based application servers such as Oracle's Glassfish, WebLogic and Apache's Tomcat.
+
+
+In order to use not GET based HTTP API calls a client has to be developed using Jersey Client packages. 
+We used Postman to issue and test such calls.
+
+Sample API calls - URI resource names are self-descriptive:
+
+HTTP GET:
+
+1.
+
+http://localhost:8080/alif/rest/getallquotes
+
+returns JSON
+
+2.
+
+http://localhost:8080/alif/rest/getsamplequote
+
+returns JSON
+
+3.
+
+http://localhost:8080/alif/rest/getrandomquote
+
+returns JSON
+
+4.
+
+http://localhost:8080/alif/rest/getallquotesbycategory/daily
+
+returns JSON
+specify category keyword after slash /. For example:  http://localhost:8080/alif/rest/getallquotesbycategory/weekly
+
+5.
+
+http://localhost:8080/alif/rest/senddailyquotes/bob@company.com
+
+returns HTTP response with code and annotated message
+
+specify e-mail address after slash /.
+
+
+HTTP POST:
+
+6.
+
+http://localhost:8080/alif/rest/createquote
+
+consumes JSON Quote object:
+
+{
+    "ID": "0",
+    "author": "Steve Jobs",
+    "category": "daily",
+    "quote": "Famous quote from the future"
+}
+
+returns HTTP response with code and annotated message
+
+HTTP PUT:
+
+7.
+
+http://localhost:8080/alif/rest/editQuoteAuthor
+
+consumes JSON Quote object:
+
+{
+    "ID": "0",
+    "author": "Steve Jobs 2",
+    "category": "daily",
+    "quote": "Famous quote from the future"
+}
+
+returns HTTP response with code and annotated message
+
+8.
+
+http://localhost:8080/alif/rest/editQuoteCategory
+
+consumes JSON Quote object:
+
+{
+    "ID": "0",
+    "author": "Steve Jobs 2",
+    "category": "weekly",
+    "quote": "Famous quote from the future"
+}
+
+returns HTTP response with code and annotated message
+
+9.
+
+http://localhost:8080/alif/rest/editQuote
+
+consumes JSON Quote object:
+
+{
+    "ID": "0",
+    "author": "Steve Jobs 2",
+    "category": "weekly",
+    "quote": "Famous quote from the past"
+}
+
+returns HTTP response with code and annotated message
