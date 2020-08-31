@@ -6,7 +6,6 @@
 package com.mycompany.alif;
 
 import java.util.List;
-import javax.servlet.ServletContextEvent;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -22,7 +21,6 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
 
-//@Path("/getquote")
 @Path("/")
 
 /**
@@ -34,16 +32,11 @@ public class ProcessQuery {
     public ProcessQuery() {
         QS = new QuotesService();
         clock = new Scheduler(QS);
-        ServletContextEvent event = null;
-        
         clock.contextInitialized();
     }
     
     private QuotesService QS = null;
     private Scheduler clock = null;
-    
-    //private QuotesService QS = new QuotesService();
-    //private Scheduler clock = new Scheduler();
     
     @Context
     UriInfo uriInfo;
