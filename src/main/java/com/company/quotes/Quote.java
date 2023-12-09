@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.alif;
+package com.company.quotes;
 
-import com.mycompany.alif.Constants.RETURN_CODES;
+import com.company.quotes.Constants.RETURN_CODES;
 import java.time.LocalDate;
 import java.util.Objects;
 

@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.alif;
+package com.company.quotes;
 
-import com.mycompany.alif.Constants.RETURN_CODES;
-import static com.mycompany.alif.Constants.ZERO;
+import com.company.quotes.Constants.RETURN_CODES;
+import static com.company.quotes.Constants.ZERO;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;

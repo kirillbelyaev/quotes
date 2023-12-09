@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 
-import com.mycompany.alif.Quote;
-import com.mycompany.alif.QuotesDAO;
-import com.mycompany.alif.QuotesService;
+import com.company.quotes.Quote;
+import com.company.quotes.QuotesDAO;
+import com.company.quotes.QuotesService;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collection;
